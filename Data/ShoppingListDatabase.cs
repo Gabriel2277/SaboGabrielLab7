@@ -105,6 +105,10 @@ public Task<List<ShopList>> GetShopListsAsync()
                 "DELETE FROM ListProduct WHERE ShopListID = ? AND ProductID = ?",
                 shopListId, productId);
         }
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
+        }
 
     }
 }
